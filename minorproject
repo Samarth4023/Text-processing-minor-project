@@ -1,0 +1,53 @@
+import json
+import string
+
+def read_file(file_path):
+    with open(file_path, 'r') as file:
+        data = file.read()
+    return data
+
+def count_words(data):
+    words = data.split()
+    total_words = len(words)
+    unique_words = len(set(words))
+    return total_words, unique_words
+
+def create_word_count_dict(data):
+    words = data.split()
+    word_count_dict = {}
+    for word in words:
+        if word not in word_count_dict:
+            word_count_dict[word] = 1
+        else:
+            word_count_dict[word] += 1
+    return word_count_dict
+
+def save_to_json(data, file_path):
+    with open(file_path, 'w') as file:
+        json.dump(data, file)
+
+def remove_whitespace(data):
+    return ' '.join(data.split())
+
+def remove_special_chars(data):
+    return data.translate(str.maketrans('', '', string.punctuation))
+
+file_path = 't8.shakespeare.txt'
+data = read_file(file_path)
+
+total_words, unique_words = count_words(data)
+print(f'Total words: {total_words}')
+print(f'Unique words: {unique_words}')
+
+word_count_dict = create_word_count_dict(data)
+save_to_json(word_count_dict, 'word_count.json')
+
+data_lower = data.lower()
+word_count_dict_lower = create_word_count_dict(data_lower)
+save_to_json(word_count_dict_lower, 'word_count_lower.json')
+
+data_no_whitespace = remove_whitespace(data)
+data_no_special_chars = remove_special_chars(data_no_whitespace)
+
+with open('output.txt', 'w') as file:
+    file.write(data_no_special_chars)
