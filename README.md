@@ -1,9 +1,7 @@
-# skillvertex-text-processing-minor-project
+# Text-processing-minor-project
 
-FREE
-
-Text Processing and information application.
-Ensure to use OOPs concepts to build the application.
+## Text Processing and information application.
+Used OOPs concepts to build the application.
 1. Read a text file
 2. Find number of unique words
 3. Count total words
