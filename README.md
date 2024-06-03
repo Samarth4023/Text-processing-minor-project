@@ -37,7 +37,3 @@ Welcome to the **Text Processing and Information Application**! 🚀 As part of 
 4. Explore the results!
 
 Feel free to contribute, enhance, or customize this project. Happy text processing! 🎉
-
----
-
-Remember to replace `[Your Name]` with your actual name or username. Feel free to add any additional details or personalize the content further. Good luck with your project! 🌟🐍
